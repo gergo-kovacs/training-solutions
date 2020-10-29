@@ -15,6 +15,7 @@ public class Registration {
         String email;
         email = scanner.nextLine();
 
+
         System.out.println("Név: "+name);
         System.out.println("Email: "+email);
     }
