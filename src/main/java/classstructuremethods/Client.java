@@ -32,7 +32,11 @@ public class Client {
 
     /*költözés*/
     public void migrate(String address){
-    this.address = address;
+        this.address = address;
     }
 
+    /*adatok kiiratás*/
+    public void writeData(){
+        System.out.println("Ügyfél neve: "+getName()+"\n"+"Ügyfél címe: "+getAddress()+"\n"+"Ügyfél kora: "+getYear()+"\n");
+    }
 }
