@@ -17,10 +17,10 @@ public class ProductMain {
         System.out.println(termek1.getName() + " " + termek1.getPrice());
 
         termek1.decreasePrice(100);
-        System.out.println("decrease -> " + termek1.getName() + " " + termek1.getPrice());
+        System.out.println("decrease ->  " + termek1.getName() + " " + termek1.getPrice());
 
         termek1.increasePrice(51);
-        System.out.println("increase -> " + termek1.getName() + " " + termek1.getPrice());
+        System.out.println("increase ->  " + termek1.getName() + " " + termek1.getPrice());
 
     }
 }
