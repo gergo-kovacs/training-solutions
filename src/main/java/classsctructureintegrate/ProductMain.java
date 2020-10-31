@@ -11,6 +11,7 @@ public class ProductMain {
         System.out.println("Termék ára? ");
         int cost = scan.nextInt();
 
+
         Product termek1 = new Product(product, cost);
 
         System.out.println(termek1.getName() + " " + termek1.getPrice());
