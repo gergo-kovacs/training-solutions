@@ -16,13 +16,24 @@ public class ArrayMain {
         boolean[] trueOrFalse = new boolean[6];
 
         for (int i = 0; i < trueOrFalse.length; i++) {
-            if (i % 2 == 0 || i == 0) {
-                trueOrFalse[i] = true;
-            } else {
-                trueOrFalse[i] = false;
+            if(i%2 == 0 || i==0){
+                trueOrFalse[i]=true;
+            }else{
+                trueOrFalse[i]=false;
             }
-            System.out.print(trueOrFalse[i] + " ");
+            System.out.print(trueOrFalse[i]+" ");
         }
+
+        System.out.println();
+
+        ArrayHandler itemFound = new ArrayHandler();
+        System.out.println(itemFound.contains(n,16));
+
+        System.out.println(itemFound.find(n,5));
+
+
+
+
 
     }
 }
