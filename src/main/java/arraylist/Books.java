@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Books {
-    List<String> titles = new ArrayList<>();
+    private List<String> titles = new ArrayList<>();
 
     public void add(String book){
         titles.add(book);
