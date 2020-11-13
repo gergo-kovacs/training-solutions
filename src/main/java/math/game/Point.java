@@ -19,7 +19,7 @@ public class Point {
     }
 
     public double distance(Point other){
-        double result = Math.sqrt(Math.pow(other.getX()-getX(),2)+Math.pow(other.getY()-getY(),2));
-        return result;
+
+        return  Math.sqrt(Math.pow(other.getX()-getX(),2)+Math.pow(other.getY()-getY(),2));
     }
 }
