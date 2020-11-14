@@ -10,8 +10,8 @@ public class Warrior {
     Point position;
 
     public Warrior(String name, Point point) {
-        this.name = name;
         position = point;
+        this.name = name;
         Random random = new Random();
         stamina = random.nextInt(81)+20;
     }
