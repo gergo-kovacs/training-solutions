@@ -40,5 +40,8 @@ public class SocialNetwork {
         return bdConnectList;
     }
 
-
+    @Override
+    public String toString() {
+        return  ""+members;
+    }
 }

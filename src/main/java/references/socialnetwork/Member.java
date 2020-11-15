@@ -25,4 +25,19 @@ public class Member {
         connections.add(member);
     }
 
+    public List<String> connectedNames(){
+        List<String> connectedMemberNames = new ArrayList<>();
+        for (Member c:connections) {
+            connectedMemberNames.add(c.getName());
+        }
+        return connectedMemberNames;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "name='" + name + '\'' +
+                ", connections=" + connectedNames() +
+                '}';
+    }
 }
