@@ -1,5 +1,6 @@
 package algorithmscount.bankaccounts;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -18,7 +19,7 @@ public class BankAccountConditionCounterTest {
                 new BankAccount("Joe Doe", "123", 300),
                 new BankAccount("Jennifer Doe", "123", 400));
 
-        assertEquals(3, new BankAccountConditionCounter().countWithBalanceGreaterThan(bankAccounts, 100));
+        Assertions.assertEquals(3, new BankAccountConditionCounter().countWithBalanceGreaterThan(bankAccounts, 100));
         assertEquals(0, new BankAccountConditionCounter().countWithBalanceGreaterThan(bankAccounts, 400));
     }
 }
