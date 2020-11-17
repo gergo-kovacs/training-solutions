@@ -34,7 +34,7 @@ public class MaxAlgorithmsTest {
         assertEquals(700, aboveTarget.selectSalesPersonWithFurthestAboveTarget(salespersons).getAmount());
         assertEquals(100, aboveTarget.selectSalesPersonWithFurthestAboveTarget(salespersons).getTarget());
     }
-/*
+
     @Test
     public void testSelectSalesPersonWithFurthestBelowTarget() {
         SalespersonWithFurthestBelowTargetSelector belowTarget = new SalespersonWithFurthestBelowTargetSelector();
@@ -43,5 +43,5 @@ public class MaxAlgorithmsTest {
         assertEquals(200, belowTarget.selectSalesPersonWithFurthestBelowTarget(salespersons).getAmount());
         assertEquals(300, belowTarget.selectSalesPersonWithFurthestBelowTarget(salespersons).getTarget());
     }
-*/
+
 }
