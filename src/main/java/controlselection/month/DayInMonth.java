@@ -19,9 +19,7 @@ public class DayInMonth {
             leapYear=true;
         }
 
-        System.out.println(month);
         month = month.toLowerCase();
-        System.out.println(month);
         for (int i = 0; i < monthArray.length; i++) {
             if (monthArray[i].equals(month)) {
                 m = i+1;
