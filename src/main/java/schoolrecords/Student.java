@@ -34,10 +34,6 @@ public class Student {
                    return 0.0;
                 }
 
-        //if (count != 0) {
-        //            return Math.round((sum / count) * 100.0) / 100.0;
-        //        }
-        //        return 0.0;
         BigDecimal bd = new BigDecimal(sum/count).setScale(2, RoundingMode.HALF_UP);
         double result = bd.doubleValue();
         return (result);
@@ -70,7 +66,7 @@ public class Student {
         marks.add(mark);
     }
 
-    private boolean isEmpty(String str){
+    private boolean isEmpty(String str) {
         return str == null || "".equals(str.trim());
     }
 
@@ -83,12 +79,6 @@ public class Student {
         return marks.isEmpty();
     }
 
-
-
-
-
-
-//"Kovács marks: matematika: excellent(5)"
     @Override
     public String toString() {
         String txt="";
