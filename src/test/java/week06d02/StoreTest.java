@@ -1,26 +1,23 @@
 package week06d02;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StoreTest {
 
-    List<Product> products = new ArrayList<>();
-    Product product1 = new Product();
-    Product product2 = new Product();
-
 
     @Test
-    public void test1(){
-        product1.setName("Chibo");
-        product1.setPrice(1000);
-        product1.setCategory(Category.OTHER.toString());
-        product2.setName("Chibo");
-        product2.setPrice(2000);
-        product2.setCategory(Category.FROZEN.toString());
-        Assertions.assertEquals(0,new Store(products).getProductByCategoryName(Category.FROZEN));
+    public void getEvenIndexElementsTest() {
+        Store store = new Store(Arrays.asList(
+                new Product("Bosch", Category.FROZEN, 1000),
+                new Product("Lehel", Category.FROZEN, 2000),
+                new Product("Mars", Category.OTHER, 1000)
+        ));
+
+        assertEquals(2, store.getProductByCategoryName(Category.FROZEN));
+
     }
 }
