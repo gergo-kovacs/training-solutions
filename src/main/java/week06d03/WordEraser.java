@@ -22,6 +22,6 @@ public class WordEraser {
     }
 
     private boolean isEmpty(String a,String b){
-        return ((a==null && b==null)||((a=="") && (b=="")));
+        return (a==null || b==null);
     }
 }
