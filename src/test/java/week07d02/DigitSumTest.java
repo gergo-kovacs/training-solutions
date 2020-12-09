@@ -2,10 +2,6 @@ package week07d02;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import stringconcat.stringconcat.Name;
-import stringconcat.stringconcat.Title;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DigitSumTest {
 
