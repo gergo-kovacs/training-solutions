@@ -12,6 +12,9 @@ public class Store {
     }
 
     public void addProduct(Product product){
+        if(product==null){
+            throw new IllegalArgumentException("product can't be empty");
+        }
         if(isValid(product)) {
             products.add(product);
         }
