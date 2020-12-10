@@ -1,5 +1,5 @@
 package defaultconstructor.date;
-/*
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,4 +44,4 @@ public class SimpleDateFormatterTest {
 
         assertEquals("2016-2-29", new SimpleDateFormatter().formatDateString(simpleDate));
     }
-}*/
+}
