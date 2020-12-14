@@ -2,11 +2,12 @@ package week08d01;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import stringmethods.filename.FileNameManipulator;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RobotTest {
 
@@ -24,5 +25,13 @@ public class RobotTest {
         int[] array = {0,1};
 
         assertFalse(Arrays.equals(array, robot1.move("J")));
+    }
+
+    @Test
+    public void testBadOrder(){
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            new Robot().move("BBFH");
+        });
+        Assertions.assertEquals("wrong character!",ex.getMessage());
     }
 }
