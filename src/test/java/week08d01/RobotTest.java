@@ -2,15 +2,21 @@ package week08d01;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import stringmethods.filename.FileNameManipulator;
 
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RobotTest {
 
+    @Test
+    public void testMove(){
+        Robot robot1 = new Robot();
+
+        assertEquals(1, robot1.move("J").getX());
+    }
+
+    /*
     @Test
     public void testMove(){
         Robot robot1 = new Robot();
@@ -34,4 +40,6 @@ public class RobotTest {
         });
         Assertions.assertEquals("wrong character!",ex.getMessage());
     }
+
+     */
 }

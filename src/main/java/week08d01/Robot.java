@@ -2,40 +2,35 @@ package week08d01;
 
 public class Robot {
 
+    public Point point = new Point(0,0);
 
-    public int[] move(String move){
-        if(!check(move)){
-            throw new IllegalArgumentException("wrong character!");
+    public Point move(String movement){
+        movement = movement.toUpperCase();
+        for (int i = 0; i < movement.length(); i++) {
+            moveOneStep(movement.charAt(i));
         }
-
-        int x=0;
-        int y=0;
-
-        for (int i = 0; i < move.length(); i++) {
-            if(move.charAt(i)=='F'){
-                y++;
-            }
-            if(move.charAt(i)=='L'){
-                y--;
-            }
-            if(move.charAt(i)=='B'){
-                x--;
-            }
-            if(move.charAt(i)=='J'){
-                x++;
-            }
-        }
-        int[] result = {x,y};
-        return result;
+        return this.point;
     }
 
-    private boolean check(String text){
-        for (int i = 0; i < text.length(); i++) {
-            if(text.charAt(i)!='F' && text.charAt(i)!='L' && text.charAt(i)!='B' && text.charAt(i)!='J'){
-                return false;
+    private void moveOneStep(char step){
+        switch(step){
+            case 'F':{
+                point.increaseY();
+                return;
             }
+            case 'L':{
+                point.decreaseY();
+                return;
+            }
+            case 'J':{
+                point.increaseX();
+                return;
+            }
+            case 'B':{
+                point.decreaseX();
+                return;
+            }
+            default: throw new IllegalArgumentException("wrong character!");
         }
-        return true;
     }
-
 }
