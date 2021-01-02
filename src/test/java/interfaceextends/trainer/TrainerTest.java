@@ -1,8 +1,4 @@
-package interfaceextensd.trainer;
-
-import interfaceextends.trainer.HasName;
-import interfaceextends.trainer.HasNameAndAge;
-import interfaceextends.trainer.Trainer;
+package interfaceextends.trainer;
 
 public class TrainerTest {
 
