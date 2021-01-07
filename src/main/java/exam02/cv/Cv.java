@@ -25,14 +25,25 @@ public class Cv {
         return name;
     }
 
+    public List<Skill> getSkills() {
+        return skillsList;
+    }
+
     public void addSkills(String... skills) {
-        for (String item:skills) {
-            Skill i = new Skill(item,item.substring(item.length()-2,item.length()-1));
-            this.skillsList.add(item);
+
+        for (String s: skills) {
+            skillsList.add(new Skill(s.substring(0,s.length()-4),Integer.parseInt(s.substring(s.length()-2,s.length()-1))));
         }
     }
 
-
-
+    public int findSkillLevelByName(String name){
+        int result=0;
+        for (Skill item:skillsList) {
+            if(item.getName().equals(name)){
+                result= item.getLevel();
+            }
+        }
+        return result;
+    }
 
 }
