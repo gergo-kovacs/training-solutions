@@ -13,6 +13,10 @@ public class WordFilter {
      */
 
     public List<String> wordsWithChar(List<String> words, char c){
+        if(words.isEmpty() || c == ' '){
+            throw new IllegalArgumentException("Bad input.");
+        }
+
         List<String> wordsWithC = new ArrayList<>();
         String character = String.valueOf(c);
         for (String word : words) {
