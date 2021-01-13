@@ -18,7 +18,7 @@ public class WordFilter {
         for (String word : words) {
 
             for (int j = 0; j < word.length(); j++) {
-                if (String.valueOf(word.charAt(j)).equals("c") || String.valueOf(word.charAt(j)).equals("C")) {
+                if (String.valueOf(word.charAt(j)).equals(character.toUpperCase()) || String.valueOf(word.charAt(j)).equals(character.toLowerCase())) {
                     wordsWithC.add(word);
                     break;
                 }
