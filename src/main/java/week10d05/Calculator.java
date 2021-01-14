@@ -12,8 +12,11 @@ public class Calculator {
 
     public int findMinSum(int[] array){
 
-        //sort nélkül is vmikor...
+<<<<<<< HEAD
 
+
+=======
+>>>>>>> origin/master
         Arrays.sort(array);
         int sum = 0;
         for (int i = 0; i < 4; i++) {
