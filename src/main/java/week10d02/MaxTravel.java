@@ -9,37 +9,52 @@ package week10d02;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class MaxTravel {
 
     public static void main(String[] args) {
         MaxTravel maxTravel = new MaxTravel();
-        List<Integer> list = Arrays.asList(1,5,12,12,12,3,3,3,3,3,0);
-
-         System.out.println(maxTravel.getMaxIndex(list));
+        List<Integer> list = Arrays.asList(1, 5, 12, 12, 12, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0);
+        HashSet hashSet = new HashSet<Integer>(list);
+        System.out.println(hashSet);
+        System.out.println(maxTravel.getMaxIndex(list));
     }
 
-    public int getMaxIndex(List<Integer> lines){
-        List<Integer> passengers = new ArrayList<>();
-        int counter=1;
+    public int getMaxIndex(List<Integer> lines) {
+        List<Integer> busStops = new ArrayList<>();
+        busStops.add(lines.get(0));
+        for (Integer line : lines) {
+            if (!busStops.contains(line)) {
+                busStops.add(line);
+            }
+        }
 
-        for (int i = 0; i < lines.size()-1; i++) {
-            if(lines.get(i).equals(lines.get(i+1))){
-            counter++;
-            }else {
-                passengers.add(counter);
-                counter=1;
-            }
-        }
-        int max=0;
-        for (Integer passenger : passengers) {
-            if (passenger > max) {
-                max = passenger;
-            }
-        }
-        System.out.println(passengers);
+        int max = getMax(busStops, lines);
+        System.out.println(busStops);
         return max;
     }
+
+    private int getMax(List<Integer> busStops, List<Integer> list) {
+        int max = 0;
+        int counter = 0;
+        int busStopMaxPassengers = list.get(0);
+
+        for (Integer busStop : busStops) {
+            for (int i : list) {
+                if (i == busStop) {
+                    counter++;
+                }
+            }
+            if (counter > max) {
+                max = counter;
+                busStopMaxPassengers = busStop;
+            }
+            counter = 0;
+        }
+        return busStopMaxPassengers;
+    }
+
 
 }
