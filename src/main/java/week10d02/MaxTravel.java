@@ -14,14 +14,6 @@ import java.util.List;
 
 public class MaxTravel {
 
-    public static void main(String[] args) {
-        MaxTravel maxTravel = new MaxTravel();
-        List<Integer> list = Arrays.asList(1, 5, 12, 12, 12, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0);
-        HashSet hashSet = new HashSet<Integer>(list);
-        System.out.println(hashSet);
-        System.out.println(maxTravel.getMaxIndex(list));
-    }
-
     public int getMaxIndex(List<Integer> lines) {
         List<Integer> busStops = new ArrayList<>();
         busStops.add(lines.get(0));
@@ -55,6 +47,5 @@ public class MaxTravel {
         }
         return busStopMaxPassengers;
     }
-
 
 }
