@@ -10,22 +10,30 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Locale;
 
 public class CoronaFinder {
 
     public static void main(String[] args) {
-        CoronaFinder coronaFinder = new CoronaFinder();
-        System.out.println(coronaFinder.find());
+    CoronaFinder cvf = new CoronaFinder();
+    Path path = Path.of("src/main/resources/index.htm");
+        try {
+            System.out.println(cvf.find(Files.newBufferedReader(path),"koronavírus"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    public int find(){
-        Path path = Path.of("index.htm");
+    public int find(BufferedReader bufferedReader, String word){
+
         int counter=0;
-        try (BufferedReader bufferedReader = Files.newBufferedReader(path)){
+        try {
             String line;
+
             while((line=bufferedReader.readLine())!=null){
 
-                if(line.contains("koronavirus")){
+                if(line.contains(word)){
                     counter++;
                 }
             }
@@ -33,6 +41,8 @@ public class CoronaFinder {
 
         } catch (IOException e) {
             throw new IllegalStateException("Can not read file",e);
+        } catch (NullPointerException npe){
+            throw new IllegalStateException("File not found",npe);
         }
 
         return counter;
