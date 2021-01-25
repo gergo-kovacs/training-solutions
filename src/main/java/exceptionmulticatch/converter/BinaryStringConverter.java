@@ -4,6 +4,9 @@ public class BinaryStringConverter {
 
     public boolean[] binaryStringToBooleanArray(String binaryString){
 
+        if(binaryString==null){
+            throw new NullPointerException("binaryString null");
+        }
         if(!isBinaryNumbers(binaryString)){
             throw new IllegalArgumentException();
         }
@@ -40,7 +43,7 @@ public class BinaryStringConverter {
 
         for (int i = 0; i < numbers.length(); i++) {
             if(numbers.charAt(i)!='0'&& numbers.charAt(i)!='1'){
-               return false;
+               throw new IllegalArgumentException("binaryString not valid");
             }
         }
         return true;
