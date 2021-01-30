@@ -1,4 +1,4 @@
-package classsctructureconstructors;
+package classctructureconstructors;
 
 public class Book {
 
