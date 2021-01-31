@@ -18,10 +18,10 @@ public class SalaryWriter {
 
         try(PrintWriter printWriter = new PrintWriter(Files.newBufferedWriter(file))){
             for(String n: names){
-                if(n.substring(0,2).equals("Dr")){
+                if(n.startsWith("Dr")){
                     printWriter.println(n+": 500000");
                 }
-                else if(n.substring(0,2).equals("Mr") || n.substring(0,3).equals("Mrs")){
+                else if(n.startsWith("Mr") || n.startsWith("Mrs")){
                     printWriter.println(n+": 200000");
                 }else{
                     printWriter.println(n+": 100000");
