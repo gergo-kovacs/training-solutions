@@ -1,4 +1,4 @@
-package week02;
+package week02d03;
 //Írj egy Product oszályt String name és String code attribútumokkal!
 //Legyen egy konstruktora a két attribútummal! Legyen egy areTheyEqual()
 //metódusa, mely kap egy másik Product példányt,
