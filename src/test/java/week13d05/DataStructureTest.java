@@ -9,6 +9,6 @@ class DataStructureTest {
 
     @Test
     void aVoid() {
-        Assertions.assertEquals(4,new DataStructure().characterCounter("a lmaFA"));
+        Assertions.assertEquals(4,new DataStructure().characterCounter("a lmaF{A"));
     }
 }
