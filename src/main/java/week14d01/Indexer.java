@@ -51,4 +51,20 @@ public class Indexer {
 
         return nameWithIndex;
     }
+
+    public Map<Character, Set<String>> index3(List<String> names) {
+        Map<Character, Set<String>> nameWithIndex = new HashMap<>();
+
+        for (String s: names) {
+
+            Character key =s.charAt(0);
+            if(!nameWithIndex.containsKey(s)){
+                nameWithIndex.put(key,new HashSet<>());
+            }
+            nameWithIndex.get(key).add(s);
+
+        }
+
+        return nameWithIndex;
+    }
 }

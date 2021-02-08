@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,5 +24,14 @@ class IndexerTest {
         Assertions.assertEquals(expectedList, new Indexer().index2(Arrays.asList("Bela","Aladar","Attila","Cecilia")));
     }
 
+    @Test
+    public void testIndexerIfSet(){
+        Map<Character, Set<String>> expectedList =  Map.of('A',Set.of("Attila"),
+                                                        'B',Set.of("Bela"),
+                                                        'C',Set.of("Cecilia")
+        );
 
+        Assertions.assertEquals(expectedList, new Indexer().index3(Arrays.asList("Bela","Bela","Aladar","Attila","Cecilia")));
+
+    }
 }
