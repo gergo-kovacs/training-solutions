@@ -49,12 +49,5 @@ class LibraryTest<TemporaryFolder> {
         Assertions.assertEquals("Can not read file",ex.getMessage());
     }
 
-   /* @Test
-    void add() throws IllegalArgumentException{
 
-
-        Exception ex = assertThrows(IllegalArgumentException.class,
-                () -> new Library().add(new ArrayList<Book>(new Book("Kis M","A"))));
-
-    }*/
 }
