@@ -1,5 +1,5 @@
 package exam03;
-/*
+
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -90,4 +90,4 @@ public class CruiseTest {
         assertEquals(Map.of(CruiseClass.LUXURY, 2 , CruiseClass.FIRST, 1), result);
     }
 
-}*/
+}
