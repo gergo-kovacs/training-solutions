@@ -66,10 +66,12 @@ public class Cruise {
     }
 
     public double sumAllBookingsCharged() {
+        double sum=0.0;
         for (Passenger passenger : passengers) {
-            passenger.getCruiseClass().getMultiplier();
+            double v = passenger.getCruiseClass().getMultiplier() * basicPrice;
+            sum+=v;
         }
-        return 0;
+        return sum;
     }
 
     public Map<CruiseClass, Integer> countPassengerByClass() {
