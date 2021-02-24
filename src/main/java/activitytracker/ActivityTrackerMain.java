@@ -6,6 +6,8 @@ import org.mariadb.jdbc.MariaDbDataSource;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityTrackerMain {
 
@@ -21,6 +23,54 @@ public class ActivityTrackerMain {
             throw new IllegalStateException("Cannot insert");
         }
     }
+
+    public Activity queryById( DataSource dataSource, long id){
+        try (
+                Connection connection = dataSource.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement("select * from activities where id = (?)")) {
+                preparedStatement.setLong(1,id);
+                return selectActivityByPreparedStatement(preparedStatement);
+        } catch (SQLException sql) {
+            throw new IllegalStateException("Cannot insert");
+        }
+
+    }
+
+    private Activity selectActivityByPreparedStatement(PreparedStatement preparedStatement){
+        try(ResultSet rs = preparedStatement.executeQuery()){
+            if(rs.next()){
+                Activity activity = new Activity(rs.getLong("id"),
+                        rs.getTimestamp("start_time").toLocalDateTime(),
+                        rs.getString("activity_desc"),
+                        Type.valueOf(rs.getString("activity_type")));
+                return activity;
+            }
+            throw new IllegalArgumentException("Not fount");
+        }catch (SQLException sql){
+            throw new IllegalArgumentException("Execute faild");
+        }
+    }
+
+    public List<Activity> allActivites(DataSource dataSource){
+        List<Activity> activityList= new ArrayList<>();
+        try (
+                Connection connection = dataSource.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement("select * from activities")) {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()){
+                    activityList.add(new Activity(resultSet.getLong("id"),
+                            resultSet.getTimestamp("start_time").toLocalDateTime(),
+                            resultSet.getString("activity_desc"),
+                            Type.valueOf(resultSet.getString("activity_type"))));
+                }
+
+        } catch (SQLException sql) {
+            throw new IllegalStateException("Cannot insert");
+        }
+
+        return activityList;
+    }
+
     public static void main(String[] args) {
         MariaDbDataSource mariaDbDataSource;
 
@@ -45,5 +95,9 @@ public class ActivityTrackerMain {
         activityTrackerMain.insertIntoActivity(mariaDbDataSource,activity1);
         activityTrackerMain.insertIntoActivity(mariaDbDataSource,activity2);
         activityTrackerMain.insertIntoActivity(mariaDbDataSource,activity3);
+
+        System.out.println(activityTrackerMain.queryById(mariaDbDataSource,1));
+        System.out.println(activityTrackerMain.allActivites(mariaDbDataSource));
+
     }
 }

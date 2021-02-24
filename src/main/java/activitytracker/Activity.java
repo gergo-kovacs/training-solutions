@@ -37,4 +37,9 @@ public class Activity {
     public Type getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return  id + ", startTime=" + startTime + ", desc='" + desc + '\'' + ", type=" + type;
+    }
 }
